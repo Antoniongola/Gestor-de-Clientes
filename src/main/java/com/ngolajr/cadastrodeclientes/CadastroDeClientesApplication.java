@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CadastroDeClientesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CadastroDeClientesApplication.class, args);
+		System.out.println("Api finished :)");
 	}
 }
