@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,10 +19,13 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
+    private final PasswordEncoder encoder;
 
     public User newUser(UserDto dto) {
         User user = new User();
         user.userDtoToUser(dto);
+        //encoding the password from the dto.
+        user.setPassword(encoder.encode(user.getPassword()));
         if(userRepository.findByUsername(dto.username()).isEmpty())
             return userRepository.save(user);
 
