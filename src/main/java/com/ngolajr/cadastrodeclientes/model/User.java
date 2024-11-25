@@ -16,8 +16,7 @@ public class User {
     private String name;
     private String username;
     private String password;
-    @OneToMany
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     public void userDtoToUser(UserDto userDto) {
         //checking if the attributes from the dto aren't empty
