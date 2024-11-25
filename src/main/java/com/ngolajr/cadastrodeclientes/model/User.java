@@ -20,9 +20,15 @@ public class User {
     private Set<Role> roles;
 
     public void userDtoToUser(UserDto userDto) {
-        this.name = userDto.name();
-        this.username = userDto.username();
-        this.password = userDto.password();
+        //checking if the attributes from the dto aren't empty
+        if(!userDto.name().isEmpty())
+            this.name = userDto.name();
+        if(!userDto.username().isEmpty())
+            this.username = userDto.username();
+        if(!userDto.password().isEmpty())
+            this.password = userDto.password();
+
+        //by default, the user is a common user.
         this.roles = Set.of(Role.USER);
     }
 }
