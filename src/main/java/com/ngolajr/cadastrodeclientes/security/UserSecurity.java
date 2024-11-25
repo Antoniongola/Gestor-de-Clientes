@@ -42,8 +42,8 @@ public class UserSecurity implements WebMvcConfigurer {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers(HttpMethod.POST, "api/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "api/signup").permitAll()
+                        .requestMatchers(HttpMethod.POST, "api/auth/login").permitAll()
+                        .requestMatchers(HttpMethod.POST, "api/auth/signup").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth->oauth.jwt(Customizer.withDefaults()));
