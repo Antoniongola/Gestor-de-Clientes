@@ -14,6 +14,8 @@ Get mapping endpoints (listing):
 
     -localhost:8080/api/user/{id} (for reading a specific user)
 
+    -localhost:8080/api/user/role/{manager} (for listing users with the specific role)
+
 Put mapping endpoint (for updating a specific user):
 
     -localhost:8080/api/user/{id} (for updating a specific user info)
