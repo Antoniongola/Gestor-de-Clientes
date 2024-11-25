@@ -19,6 +19,7 @@ public class InitialConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         User user = new User();
+        user.setName("Admin");
         user.setUsername("admin");
         user.setPassword(passwordEncoder.encode("admin"));
         user.setRoles(Set.of(Role.ADMIN, Role.USER, Role.MANAGER));
