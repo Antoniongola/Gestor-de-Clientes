@@ -40,8 +40,8 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
-    public List<User> findAllUsersByRole(String role) {
-        return userRepository.findAllByRolesContaining(Role.valueOf(role.toUpperCase()));
+    public Page<User> findAllUsersByRole(String role, Pageable pageable) {
+        return userRepository.findAllByRolesContaining(Role.valueOf(role.toUpperCase()), pageable);
     }
 
     public User updateUser(long id, UserDto dto) {

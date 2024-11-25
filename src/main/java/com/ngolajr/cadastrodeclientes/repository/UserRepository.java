@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findAllByRolesContaining(Role role);
+    Page<User> findAllByRolesContaining(Role role, Pageable pageable);
     Optional<User> findByUsername(String username);
     Page<User> findAll(Pageable pageable);
 
