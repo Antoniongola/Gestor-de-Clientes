@@ -38,7 +38,7 @@ public class AuthService {
                 .collect(Collectors.joining(" "));
 
         var claims = JwtClaimsSet.builder()
-                .issuer("Ngola-ISPMEDIA")
+                .issuer("Ngola:User-Manager")
                 .subject(dto.username())
                 .issuedAt(now)
                 .expiresAt(now.plusSeconds(expiresIn))
