@@ -19,13 +19,10 @@ public class User {
     @OneToMany
     private Set<Role> roles;
 
-    public User userDtoToUser(UserDto userDto) {
-        User user = new User();
-        user.setName(userDto.name());
-        user.setUsername(userDto.username());
-        user.setPassword(userDto.password());
-        Set<Role> roles = Set.of(Role.USER);
-
-        return user;
+    public void userDtoToUser(UserDto userDto) {
+        this.name = userDto.name();
+        this.username = userDto.username();
+        this.password = userDto.password();
+        this.roles = Set.of(Role.USER);
     }
 }
