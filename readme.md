@@ -14,7 +14,7 @@ Get mapping endpoints (listing):
 
     -localhost:8080/api/user/{id} (for reading a specific user by id)
 
-    -localhost:8080/api/user/{username} (for reading a specific user by username)
+    -localhost:8080/api/user/username/{username} (for reading a specific user by username)
 
     -localhost:8080/api/user/role/{manager} (for listing users with the specific role)
 
